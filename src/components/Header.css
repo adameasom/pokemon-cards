@@ -1,0 +1,163 @@
+.header {
+  position: fixed;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(248, 249, 250);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transform: translateY(-60px);
+  transition: all 2s ease-in-out;
+}
+
+.header.show {
+  transform: translateY(0);
+}
+
+.logo-box {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.search-bar {
+  width: 220px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 0.5px solid rgb(192, 192, 192);
+  outline: none;
+  border-radius: 20px;
+  font-size: x-small;
+  user-select: none;
+}
+
+.search-bar:hover {
+  border: 0.5px solid rgb(150,150,150);
+}
+
+.search-bar:focus-within {
+  border: 0.5px solid rgb(0, 0, 0);
+}
+
+.search-button {
+  position: absolute;
+  top: 18px;
+  left: 250px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.poke-button {
+  width: 24px;
+  height: 24px;
+}
+
+.poke-button:hover {
+  animation: rock 1s infinite ease-in-out;
+}
+
+.suggestions-dropdown {
+  list-style: none;
+  position: absolute;
+  top: 115px;
+  left: 10px;
+  width: fit-content;
+  max-height: 85dvh;
+  margin: 0;
+  padding: 0;
+  padding-right: 15px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.suggestions-dropdown li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 0.5px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  background-color: unset;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.suggestions-dropdown li:hover {
+  cursor: pointer;
+  border: 0.5px solid rgb(150, 150, 150);
+  transform: translateX(10px);
+  transition: 0.5s;
+}
+
+.suggestions-dropdown li:active {
+  border: 0.5px solid rgb(0, 0, 0);
+  background-color: rgb(245, 245, 245);
+}
+
+.suggestion-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.suggestions-dropdown li .hash {
+  font-size: x-small;
+}
+
+.suggestions-dropdown li span {
+  font-size: small;
+  font-weight: bold;
+}
+
+.highlight-marker {
+  background-color: rgba(255, 255, 0, 0.5); /* Lighter yellow with transparency */
+  border-radius: 3px; /* Smooth rounded edges */
+  box-shadow: 0 0 5px rgba(255, 255, 0, 0.7); /* Subtle glow effect */
+}
+
+.feeling-lucky-container {
+  margin-left: 10px;
+}
+
+.feeling-lucky-button {
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgb(192, 192, 192);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: x-small;
+  transition: 0.5s;
+}
+
+.feeling-lucky-button:hover {
+  border: 0.5px solid rgb(150, 150, 150);
+}
+
+.feeling-lucky-button:focus-within {
+  border: 0.5px solid rgb(0, 0, 0);
+  transition: none;
+}
+
+.pokemon-logo {
+  width: auto;
+  height: 30px;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}

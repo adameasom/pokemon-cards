@@ -1,0 +1,28 @@
+.carousel-container {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-content: center;
+	width: 100%;
+	margin-top: 110px;
+	height: auto;
+	transition: 0.3s;
+}
+
+.blurred {
+	filter: blur(10px);
+	opacity: 0.3;
+	transition: filter 0.3s ease opacity 0.3s ease;
+	pointer-events: none; /* Disable interactions */
+}
+
+.pokemon-count {
+	margin-bottom: 5px;
+	text-align: center;
+	opacity: 0;
+	transition: all 2s ease-in-out 4s;
+}
+
+.pokemon-count.show {
+	opacity: 1.0;
+}

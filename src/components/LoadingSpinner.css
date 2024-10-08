@@ -1,0 +1,28 @@
+@keyframes rock {
+  0% {
+    transform: none;
+  }
+  20% {
+    transform: rotate(-5deg) translateX(-2px);
+  }
+  50% {
+    transform: rotate(10deg) translateX(5px);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.spinner {
+	position: absolute;
+	top: 230px;
+	width: 80px;
+	height: 80px;
+	animation: rock 1s infinite ease-in-out;
+}

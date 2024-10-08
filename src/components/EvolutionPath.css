@@ -1,0 +1,90 @@
+.evolution-path {
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+  width: 400px;
+  margin-top: 25px;
+  padding-bottom: 25px;
+	opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+	z-index: 1;
+  cursor: default;
+}
+
+.evolution-path.loaded {
+  opacity: 1;
+}
+
+.evolution-path h3 {
+	margin: 0;
+  font-size: medium;
+	text-align: center;
+}
+
+.evolution-item {
+  height: 70px;
+  text-align: center;
+}
+
+.evolution-item p {
+  font-size: x-small;
+}
+
+.evolution-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+	margin-top: 5px;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.evolution-path-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.evolution-image {
+	width: 50px;
+  height: 50px;
+	margin: 0 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.evolution-image:hover {
+  transform: scale(1.1);
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 15px solid rgba(0, 0, 0, 0.6);
+}
+
+/* Customize arrow direction and styling as needed */
+.left-arrow {
+  transform: rotate(0deg);
+}
+
+.right-arrow {
+  transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 600px) {
+  .evolution-path {
+    width: 600px;
+  }
+}
+
+@media only screen and (min-width: 880px) {
+  .evolution-path {
+    width: 800px;
+  }
+}

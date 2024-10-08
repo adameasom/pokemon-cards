@@ -1,0 +1,81 @@
+.pokemon-stats {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  border-radius: 20px;
+  border: 3px solid;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 30px 4px;
+  margin-top: 20px;
+  width: 240px;
+  height: fit-content;
+	opacity: 0;
+  transition: opacity 1s ease-in-out, transform 0.3s linear;
+	z-index: 1;
+  cursor: default;
+}
+
+.pokemon-stats.loaded {
+  opacity: 1;
+}
+
+.pokemon-stats h3 {
+  margin: 0;
+  font-size: medium;
+	text-align: right;
+}
+
+.pokemon-stats ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.pokemon-stats li {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.stat-name {
+	width: 180px;
+	font-size: xx-small;
+  font-weight: bold;
+  text-transform: uppercase;
+	text-align: right;
+}
+
+.stat-bar-container {
+	width: 160px;
+  justify-self: flex-start;
+  background-color: rgb(224, 224, 224);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 5px;
+  position: relative;
+}
+
+.stat-bar {
+  height: 10px;
+  transition: width 2000ms ease-in-out;
+}
+
+.stat-value {
+  width: 40px;
+	font-size: small;
+  text-align: right;
+}
+
+@media only screen and (min-width: 880px) {
+  .pokemon-stats {
+    position: absolute;
+    top: 40px;
+    left: -300px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .pokemon-stats {
+    position: absolute;
+    top: 40px;
+    left: -450px;
+  }
+}
