@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Header.css';
 import logo from '../assets/logo.png';
-import pokemonlogo from '../assets/pokemon-text-logo.png';
 import pokeball from '../assets/pokeball.png';
 import { normalizePokemonName } from '../utils/normalizePokemonName';
 
