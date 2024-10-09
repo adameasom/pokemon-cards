@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import AnimatedSlider from './AnimatedSlider';
 import LoadingSpinner from './LoadingSpinner';
-import pokemon from 'pokemon';
+import jaPokemonNames from '../utils/jaPokemonNames.json';
 import GenerationBar from './GenerationBar';
 import { normalizePokemonName } from '../utils/normalizePokemonName';
 import './Carousel.css';
@@ -34,13 +34,18 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
   
       const results = await Promise.all(promises);
       
-      const pokemonData = results.map(result => ({
-        ...result.data,
-        spriteUrl: getPokemonImageUrl(result.data.id),
-        normalizedName: normalizePokemonName(result.data.name), // Normalize the English name
-        japaneseName: pokemon.getName(result.data.id, 'ja'), // Get Japanese name
-        isImageLoaded: false, // Track whether the image has loaded
-      }));
+      const pokemonData = results.map(result => {
+        const japaneseNameEntry = jaPokemonNames.find(pokemon => pokemon.id === result.data.id);
+        const japaneseName = japaneseNameEntry ? japaneseNameEntry.name : ''; // Get Japanese name from JSON
+
+        return {
+          ...result.data,
+          spriteUrl: getPokemonImageUrl(result.data.id),
+          normalizedName: normalizePokemonName(result.data.name), // Normalize the English name
+          japaneseName, // Use the Japanese name from the JSON
+          isImageLoaded: false, // Track whether the image has loaded
+        };
+      });
       
       setPoke(pokemonData); // Set Pokémon data in state
       setTotalPokemonCount(pokemonData.length); // Set total Pokémon count

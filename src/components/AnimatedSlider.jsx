@@ -6,7 +6,7 @@ import PokemonDescription from './PokemonDescription';
 import { normalizePokemonName } from '../utils/normalizePokemonName';
 import { typeColorsLight } from '../utils/typeColors';
 import { typeColorsHalf } from '../utils/typeColors';
-import pokemon from 'pokemon';
+import jaPokemonNames from '../utils/jaPokemonNames.json'
 
 const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, active: propActive }) => {
   const [active, setActive] = useState(propActive || 0);
@@ -202,7 +202,8 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
           const isActive = index === active;
           const backgroundColor = typeColorsLight[item.types[0].type.name];
 					const borderColor = typeColorsHalf[item.types[0].type.name];
-					const japaneseName = pokemon.getName(item.id, 'ja');
+					const japaneseNameEntry = jaPokemonNames.find(pokemon => pokemon.id === item.id);
+          const japaneseName = japaneseNameEntry ? japaneseNameEntry.name : '';
           const normalizedName = normalizePokemonName(item.name);
           return (
             <div
