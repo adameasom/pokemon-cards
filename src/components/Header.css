@@ -75,13 +75,16 @@
 .suggestions-dropdown {
   list-style: none;
   position: absolute;
-  top: 115px;
-  left: 10px;
+  top: 48px;
+  left: 60px;
   width: fit-content;
   max-height: 85dvh;
   margin: 0;
   padding: 0;
   padding-right: 15px;
+  background-color: rgb(248, 249, 250);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   overflow-y: auto;
   z-index: 1;
 }
@@ -154,3 +157,12 @@
   transition: none;
 }
 
+@media only screen and (min-width: 768px) {
+	.suggestions-dropdown {
+    top: 115px;
+    left: 10px;
+    background-color: unset;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+  }
+}
