@@ -143,9 +143,6 @@ const Header = ({ onSearch, onResetSearch, onLogoClick, clearSearchInput, setCle
             I'm Feeling Lucky
           </button>
         </div>
-        <div className="text-logo-box">
-          <img src={pokemonlogo} alt="pokemon-text-logo" className="pokemon-logo"/>
-        </div>
       </div>
   );
 };
