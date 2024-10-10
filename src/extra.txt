@@ -1,0 +1,36 @@
+// AnimationSlider
+
+const fadeTimeoutRef = useRef(null);
+const idleTimeoutRef = useRef(null);
+
+useEffect(() => {
+    loadShow();
+    
+    resetIdleTimer();
+
+
+    return () => {
+      clearTimeout(fadeTimeoutRef.current);
+      clearTimeout(idleTimeoutRef.current);
+    };
+  }, [active, items]);
+
+// disappearing information after idle time; returning on mouse movement
+const resetIdleTimer = () => {
+    clearTimeout(fadeTimeoutRef.current);
+    clearTimeout(idleTimeoutRef.current);
+
+    setIsFading(false);
+    setShowStats(true);
+    setShowEvolutions(true);
+    setShowDescription(true);
+
+    idleTimeoutRef.current = setTimeout(() => {
+      setIsFading(true);
+      fadeTimeoutRef.current = setTimeout(() => {
+        setShowStats(false);
+        setShowEvolutions(false);
+        setShowDescription(false);
+      }, 1000); // Duration of the fade-out animation
+    }, 15000); // 15 seconds of idle time
+  };
