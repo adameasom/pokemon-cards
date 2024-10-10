@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './GenerationBar.css';
 
 const GenerationBar = ({ onSelectGeneration, disabled }) => {
-  const [showGenBar, setShowGenBar] = useState(false);
-
   const generations = [
     { label: 'Gen I', id: 1, start: 1, end: 151 },
     { label: 'Gen II', id: 2, start: 152, end: 251 },
@@ -16,16 +14,8 @@ const GenerationBar = ({ onSelectGeneration, disabled }) => {
     { label: 'Gen IX', id: 9, start: 906, end: 1025 },
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowGenBar(true); // Trigger the animation
-    }, 300); // Delay before showing the bar
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className={`generation-bar ${showGenBar ? 'show' : ''}`}>
+    <div className="generation-bar">
       {generations.map(gen => (
         <button
           key={gen.id}
