@@ -10,7 +10,7 @@ html, body {
   overflow-x: hidden;
 }
 
-button:link {
+button {
   color: black;
 }
 
