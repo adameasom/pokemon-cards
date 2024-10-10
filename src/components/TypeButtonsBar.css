@@ -9,7 +9,7 @@
   z-index: 99;
   opacity: 0;
   transform: translateY(-30px);
-  transition: all 2s ease-in-out 2s;
+  transition: all 2s ease-in-out;
 }
 
 .type-buttons-bar::-webkit-scrollbar {
@@ -24,11 +24,6 @@
 .type-buttons-bar.show {
   opacity: 1.0;
   transform: translateY(0);
-  
-}
-
-.type-buttons-bar:hover .type-button {
-  opacity: 0.3;
 }
 
 .type-button {
@@ -60,6 +55,12 @@
 
 .type-button:last-child {
   margin-right: 0;
+}
+
+@media only screen and (min-width: 1025px) {
+  .type-buttons-bar:hover .type-button {
+    opacity: 0.3;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
