@@ -3,7 +3,8 @@
 	flex-direction: column;
 	justify-items: center;
 	align-content: center;
-	height: auto;
+	width: 100%;
+	overflow-x: hidden;
 	margin-top: 100px;
 	transition: 0.3s;
 }
