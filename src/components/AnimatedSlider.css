@@ -36,7 +36,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 85px;
+	width: 100%;
+	overflow-x: hidden;
+	margin-top: 85px;;
 }
 
 .items {
