@@ -21,7 +21,7 @@
   
 .spinner {
 	position: absolute;
-	top: 230px;
+	top: 50vh;
 	width: 60px;
 	height: 60px;
 	animation: rock 1s infinite ease-in-out;
