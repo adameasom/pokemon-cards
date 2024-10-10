@@ -22,7 +22,6 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
   const [filteredPokemonCount, setFilteredPokemonCount] = useState(0);
   const [activePokemonIndex, setActivePokemonIndex] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [showPokeCount, setShowPokeCount] = useState(false);
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -61,6 +60,14 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
     };
   
     fetchPokemon();
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPokeCount(true); // Trigger the animation
+    }, 300); // Delay before showing the bar
+
+    return () => clearTimeout(timer);
   }, []);
   
   const handleImageLoad = (index) => {
@@ -122,17 +129,9 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPokeCount(true); // Trigger the animation
-    }, 300); // Delay before showing the bar
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className={`carousel-container ${isDropdownActive ? 'blurred' : ''}`}>
-      <div className={`pokemon-count ${showPokeCount ? 'show' : ''}`}>
+      <div className="pokemon-count">
         {searchTerm || filterType || filterById ? (
           <p>{filteredPokemonCount > 0 ? `${activePokemonIndex + 1}/${filteredPokemonCount}` : `0/${filteredPokemonCount}`} Pokémon found out of {totalPokemonCount}</p>
         ) : (
