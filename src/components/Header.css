@@ -8,13 +8,8 @@
   background-color: rgb(248, 249, 250);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 100;
-  transform: translateY(-60px);
-  transition: all 2s ease-in-out;
 }
 
-.header.show {
-  transform: translateY(0);
-}
 
 .logo-box {
   width: 40px;
@@ -36,7 +31,7 @@
   border: 0.5px solid rgb(192, 192, 192);
   outline: none;
   border-radius: 20px;
-  font-size: x-small;
+  font-size: 16px;
   user-select: none;
 }
 
@@ -51,7 +46,7 @@
 .search-button {
   position: absolute;
   top: 18px;
-  left: 250px;
+  left: 245px;
   width: 24px;
   height: 24px;
   display: flex;
@@ -68,23 +63,16 @@
   height: 24px;
 }
 
-.poke-button:hover {
-  animation: rock 1s infinite ease-in-out;
-}
-
 .suggestions-dropdown {
   list-style: none;
   position: absolute;
-  top: 48px;
-  left: 60px;
+  top: 115px;
+  left: 10px;
   width: fit-content;
   max-height: 85dvh;
   margin: 0;
   padding: 0;
   padding-right: 15px;
-  background-color: rgb(248, 249, 250);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   overflow-y: auto;
   z-index: 1;
 }
@@ -144,7 +132,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: x-small;
+  font-size: xx-small;
   transition: 0.5s;
 }
 
@@ -157,12 +145,8 @@
   transition: none;
 }
 
-@media only screen and (min-width: 768px) {
-	.suggestions-dropdown {
-    top: 115px;
-    left: 10px;
-    background-color: unset;
-    border-bottom-left-radius: unset;
-    border-bottom-right-radius: unset;
+@media only screen and (min-width: 1025px) {
+	.poke-button:hover {
+    animation: rock 1s infinite ease-in-out;
   }
 }
