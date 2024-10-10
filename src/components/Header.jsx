@@ -14,7 +14,6 @@ const getPokemonImageUrl = (id) => {
 
 const Header = ({ onSearch, onResetSearch, onLogoClick, clearSearchInput, setClearSearchInput, onFeelingLucky, setIsDropdownActive, allPokemon }) => {
   const [searchInput, setSearchInput] = useState('');
-  const [showHeader, setShowHeader] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const dropdownContainerRef = useRef(null);
 
@@ -98,16 +97,8 @@ const Header = ({ onSearch, onResetSearch, onLogoClick, clearSearchInput, setCle
     };
   }, [dropdownContainerRef]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowHeader(true); // Trigger the animation
-    }, 300); // Delay before showing the bar
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-      <div className={`header ${showHeader ? 'show' : ''}`}>
+      <div className="header">
         <div className="logo-box">
           <img src={logo} alt="Logo" className="logo" onClick={handleLogoClick} />
         </div>
@@ -116,7 +107,7 @@ const Header = ({ onSearch, onResetSearch, onLogoClick, clearSearchInput, setCle
             id="search"
             type="text"
             className="search-bar"
-            placeholder='Search in English, Japanese or by #. . .'
+            placeholder="search pokémon..."
             value={searchInput}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
