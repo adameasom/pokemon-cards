@@ -13,7 +13,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
 
   const [startPosition, setStartPosition] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
-  const swipeThreshold = 3; // Minimum distance for a swipe to be registered
+  const swipeThreshold = 5; // Minimum distance for a swipe to be registered
   const wheelTimeoutRef = useRef(null); // For debouncing the wheel event
 
   const [showStats, setShowStats] = useState(false);
