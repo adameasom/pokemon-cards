@@ -13,17 +13,14 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
 
   const [startPosition, setStartPosition] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
-  const swipeThreshold = 1; // Minimum distance for a swipe to be registered
+  const swipeThreshold = 3; // Minimum distance for a swipe to be registered
   const wheelTimeoutRef = useRef(null); // For debouncing the wheel event
 
   const [showStats, setShowStats] = useState(false);
   const [showEvolutions, setShowEvolutions] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
 
-  const [isFading, setIsFading] = useState(false);
   const itemRefs = useRef([]);
-  const fadeTimeoutRef = useRef(null);
-  const idleTimeoutRef = useRef(null);
   
 
   useEffect(() => {
@@ -37,7 +34,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     setShowStats(false);
     setShowEvolutions(false);
     setShowDescription(false);
-    resetIdleTimer();
 
     const statsTimeout = setTimeout(() => setShowStats(true), 300);
     const evolutionsTimeout = setTimeout(() => setShowEvolutions(true), 1000);
@@ -47,8 +43,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
       clearTimeout(statsTimeout);
       clearTimeout(evolutionsTimeout);
       clearTimeout(descriptionTimeout);
-      clearTimeout(fadeTimeoutRef.current);
-      clearTimeout(idleTimeoutRef.current);
     };
   }, [active, items]);
 
@@ -64,16 +58,14 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('mousemove', resetIdleTimer);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mousemove', resetIdleTimer);
     };
   }, [active]);
 
 
-  // Touch and mouse event hendlers for swiping to next and prev card
+  // Touch and mouse event handlers for swiping to next and prev card
   const handleStart = (e) => {
     const pos = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
     setStartPosition(pos);
@@ -118,25 +110,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     wheelTimeoutRef.current = setTimeout(() => {
       wheelTimeoutRef.current = null;
     }, 500); // Reduced debounce delay for more responsiveness (500ms)
-  };
-
-  const resetIdleTimer = () => {
-    clearTimeout(fadeTimeoutRef.current);
-    clearTimeout(idleTimeoutRef.current);
-
-    setIsFading(false);
-    setShowStats(true);
-    setShowEvolutions(true);
-    setShowDescription(true);
-
-    idleTimeoutRef.current = setTimeout(() => {
-      setIsFading(true);
-      fadeTimeoutRef.current = setTimeout(() => {
-        setShowStats(false);
-        setShowEvolutions(false);
-        setShowDescription(false);
-      }, 1000); // Duration of the fade-out animation
-    }, 15000); // 15 seconds of idle time
   };
 
   const loadShow = () => {
@@ -246,7 +219,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
                   }}
                 />
             	</div>
-              <div className={`pokeinfo fade ${isFading ? 'fade-out' : 'fade-in'}`}>
+              <div className="pokeinfo fade">
                 {isActive && showStats && (
                   <PokemonStats stats={item.stats} types={item.types} pokemonName={item.name} />
                 )}
@@ -254,7 +227,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
                   <PokemonDescription pokemonId={item.id} types={item.types} />
                 )}
               </div>
-              <div className={`fade ${isFading ? 'fade-out' : 'fade-in'}`}>
+              <div className="fade">
                 {isActive && showEvolutions && (
                   <EvolutionPath pokemonId={item.id} onPokemonClick={onPokemonClick} />
                 )}
