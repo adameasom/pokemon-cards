@@ -5,6 +5,7 @@
 	align-content: center;
 	margin-top: 100px;
 	transition: 0.3s;
+	overflow-x: hidden;
 }
 
 .blurred {
