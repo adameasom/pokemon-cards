@@ -28,7 +28,7 @@
 .search-bar {
   width: 170px;
   margin-left: 10px;
-  padding: 6px 6px 6px 16px;
+  padding: 6px 6px 6px 12px;
   border: 0.5px solid rgb(192, 192, 192);
   outline: none;
   border-top-left-radius: 20px;
@@ -148,4 +148,10 @@
 .feeling-lucky-button:focus-within {
   border: 0.5px solid rgb(0, 0, 0);
   transition: none;
+}
+
+@media only screen and (min-width: 1025px) {
+	.search-bar {
+    font-size: x-small;
+  }
 }
