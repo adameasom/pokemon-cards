@@ -6,7 +6,8 @@
 
 html, body {
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   overflow-x: hidden;
   touch-action: manipulation;
 }
@@ -14,6 +15,8 @@ html, body {
 .app-container {
 	display: flex;
 	flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .blurred {
