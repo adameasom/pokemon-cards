@@ -14,8 +14,7 @@ html, body {
 .app-container {
 	display: flex;
 	flex-direction: column;
-  width: 100%;
-  min-height: 300vh;
+  min-height: 250vh;
 }
 
 .blurred {
