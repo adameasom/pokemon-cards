@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  height: 60px;
+  height: 50px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -20,17 +20,21 @@
 
 .logo {
   height: 40px;
+  transform: scaleX(-1);
   cursor: pointer;
   user-select: none;
 }
 
 .search-bar {
-  width: 220px;
+  width: 170px;
   margin-left: 10px;
-  padding: 10px;
+  padding: 6px 6px 6px 16px;
   border: 0.5px solid rgb(192, 192, 192);
   outline: none;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   font-size: 16px;
   user-select: none;
 }
@@ -45,8 +49,8 @@
 
 .search-button {
   position: absolute;
-  top: 18px;
-  left: 245px;
+  top: 13px;
+  left: 218px;
   width: 24px;
   height: 24px;
   display: flex;
@@ -59,8 +63,8 @@
 }
 
 .poke-button {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .suggestions-dropdown {
@@ -123,7 +127,8 @@
 }
 
 .feeling-lucky-container {
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-top: -4px;
 }
 
 .feeling-lucky-button {
@@ -143,10 +148,4 @@
 .feeling-lucky-button:focus-within {
   border: 0.5px solid rgb(0, 0, 0);
   transition: none;
-}
-
-@media only screen and (min-width: 1025px) {
-	.poke-button:hover {
-    animation: rock 1s infinite ease-in-out;
-  }
 }
