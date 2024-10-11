@@ -1,6 +1,6 @@
 .type-buttons-bar {
   position: fixed;
-  top: 65px;
+  top: 50px;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -60,6 +60,10 @@
 @media only screen and (min-width: 1025px) {
   .type-buttons-bar:hover .type-button {
     opacity: 0.3;
+  }
+  .type-buttons-bar .type-button:hover {
+    transform: scale(1.1) translateY(-2px);
+    opacity: 1;
   }
 }
 
