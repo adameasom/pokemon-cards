@@ -11,6 +11,12 @@ html, body {
   touch-action: manipulation;
 }
 
+button {
+  -webkit-appearance: none; /* Remove default mobile browser styling (iOS and Android) */
+  -moz-appearance: none; /* Remove default mobile browser styling for Firefox */
+  appearance: none; /* Ensure the appearance is consistent across all browsers */
+}
+
 .app-container {
 	display: flex;
 	flex-direction: column;
