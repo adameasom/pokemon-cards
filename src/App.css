@@ -6,6 +6,7 @@
 
 html, body {
   width: 100%;
+  height: auto;
   min-height: 100%;
   overflow-x: hidden;
   touch-action: manipulation;
@@ -15,7 +16,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 .blurred {
