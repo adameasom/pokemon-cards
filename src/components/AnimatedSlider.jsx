@@ -13,7 +13,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
 
   const [startPosition, setStartPosition] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
-  const swipeThreshold = 5; // Minimum distance for a swipe to be registered
+  const swipeThreshold = 3; // Minimum distance for a swipe to be registered
   const wheelTimeoutRef = useRef(null); // For debouncing the wheel event
 
   const [showStats, setShowStats] = useState(false);
@@ -68,27 +68,45 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   // Touch and mouse event handlers for swiping to next and prev card
   const handleStart = (e) => {
     const pos = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
-    setStartPosition(pos);
+    const posY = e.type === 'mousedown' ? e.pageY : e.touches[0].pageY; // Track vertical position
+    setStartPosition({ x: posX, y: posY });
     setIsDragging(true);
   };
 
+  const handleMove = (e) => {
+    if (!isDragging || startPosition.x === null || startPosition.y === null) return;
+    
+    const currentX = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
+    const currentY = e.type === 'mousemove' ? e.pageY : e.touches[0].pageY;
+    const diffX = currentX - startPosition.x;
+    const diffY = currentY - startPosition.y;
+
+    // Check if the movement is more horizontal than vertical
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+      // Horizontal swipe detected, prevent vertical scroll
+      e.preventDefault(); 
+    }
+  };
+
   const handleEnd = (e) => {
-    if (!isDragging || startPosition === null) return;
+    if (!isDragging || startPosition.x === null) return;
 
-    const endPosition = e.type === 'mouseup' ? e.pageX : e.changedTouches[0].pageX;
-    const distance = endPosition - startPosition;
+    const endPositionX = e.type === 'mouseup' ? e.pageX : e.changedTouches[0].pageX;
+    const endPositionY = e.type === 'mouseup' ? e.pageY : e.changedTouches[0].pageY;
+    const diffX = endPositionX - startPosition.x;
+    const diffY = endPositionY - startPosition.y;
 
-    // Check if the drag distance is sufficient to count as a swipe
-    if (Math.abs(distance) > swipeThreshold) {
-      if (distance > 0) {
+    // Only handle the swipe if it is more horizontal than vertical
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+      if (diffX > 0) {
         prev(); // Swipe right
       } else {
         next(); // Swipe left
       }
     }
-    
+
     setIsDragging(false);
-    setStartPosition(null); // Reset after swipe/click
+    setStartPosition({ x: null, y: null }); // Reset after swipe
   };
 
   const handleWheel = (e) => {
@@ -167,6 +185,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
       onMouseDown={handleStart}
       onMouseUp={handleEnd}
       onTouchStart={handleStart}
+      onTouchMove={handleMove}
       onTouchEnd={handleEnd}
       onWheel={handleWheel}
     >
