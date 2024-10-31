@@ -67,6 +67,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
 
   // Touch and mouse event handlers for swiping to next and prev card
   const handleStart = (e) => {
+    e.preventDefault(); // Prevent text selection
     const posX = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
     const posY = e.type === 'mousedown' ? e.pageY : e.touches[0].pageY; // Track vertical position
     setStartPosition({ x: posX, y: posY });
