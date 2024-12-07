@@ -128,18 +128,31 @@
 }
 
 .feeling-lucky-container {
-  margin-left: 20px;
-  margin-top: -4px;
+  position: absolute;
+  right: 10px;
 }
 
 .feeling-lucky-button {
+  height: 28px;
+  width: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(255, 255, 255);
   border: 0.5px solid rgb(192, 192, 192);
-  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
   font-size: xx-small;
   transition: 0.5s;
+}
+
+.feeling-lucky-button svg {
+  padding: 3px;
+  stroke: rgb(80, 80, 80);
+}
+
+.feeling-lucky-button span {
+  display: none;
 }
 
 .feeling-lucky-button:hover {
@@ -149,6 +162,20 @@
 .feeling-lucky-button:focus-within {
   border: 0.5px solid rgb(0, 0, 0);
   transition: none;
+}
+
+@media only screen and (min-width: 375px) {
+  .feeling-lucky-button {
+    height: 24px;
+    width: unset;
+    padding: 5px 10px;
+  }
+	.feeling-lucky-button span {
+    display: unset;
+  }
+  .feeling-lucky-button svg {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
