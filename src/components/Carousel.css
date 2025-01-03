@@ -1,5 +1,5 @@
 .carousel-container {
-	width: 100vw;
+	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-items: center;
