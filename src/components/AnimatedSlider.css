@@ -189,6 +189,7 @@
 }
 
 .buttons {
+	position: fixed;
 	display: flex;
 	gap: 250px;
 }
