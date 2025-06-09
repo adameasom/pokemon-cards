@@ -40,10 +40,12 @@
 }
 
 .items {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	z-index: 5;
 	animation: cardLoading 2.5s ease-in-out;
+	overflow-x: hidden;
 }
 
 .item {
@@ -141,12 +143,12 @@
 }
 
 .type {
-	idth: 60px;
+	width: 60px;
   padding: 2px 0;
   border-radius: 20px;
   color: rgb(255, 255, 255);
   font-size: x-small;
-text-align: center;
+	text-align: center;
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
