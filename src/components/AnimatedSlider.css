@@ -40,7 +40,6 @@
 }
 
 .items {
-	width: 100vw;
 	display: flex;
 	justify-content: center;
 	z-index: 5;
@@ -142,12 +141,12 @@
 }
 
 .type {
-	width: 60px;
+	idth: 60px;
   padding: 2px 0;
   border-radius: 20px;
   color: rgb(255, 255, 255);
   font-size: x-small;
-	text-align: center;
+text-align: center;
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
@@ -192,7 +191,7 @@
 .buttons {
 	position: fixed;
 	display: flex;
-	align-self: center;
+	align-content: center;
 	gap: 250px;
 }
 
