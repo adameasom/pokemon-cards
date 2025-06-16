@@ -32,11 +32,13 @@
 }
 
 .slider {
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin-top: 85px;
+	overflow-x: hidden;
 }
 
 .items {
