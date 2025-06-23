@@ -40,7 +40,6 @@
 }
 
 .items {
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	z-index: 5;
@@ -175,7 +174,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 30px;
-	height: 30px;
+	height: 0px;
 	background: rgba(255, 255, 255, 0);
 	border: none;
 	outline: none;
