@@ -182,17 +182,16 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   }, []);
 
   return (
-    <div
-      className="slider"
-      onMouseDown={handleStart}
-      onMouseMove={handleMove}
-      onMouseUp={handleEnd}
-      onTouchStart={handleStart}
-      onTouchMove={handleMove}
-      onTouchEnd={handleEnd}
-      onWheel={handleWheel}
-    >
-      <div className="items">
+    <div className="slider">
+      <div className="items"
+        onMouseDown={handleStart}
+        onMouseMove={handleMove}
+        onMouseUp={handleEnd}
+        onTouchStart={handleStart}
+        onTouchMove={handleMove}
+        onTouchEnd={handleEnd}
+        onWheel={handleWheel}
+      >
         {items.map((item, index) => {
           const isActive = index === active;
           const backgroundColor = typeColorsLight[item.types[0].type.name];
