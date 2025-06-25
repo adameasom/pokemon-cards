@@ -182,94 +182,92 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   }, []);
 
   return (
-    <div className="animated-slider">
-      <div className="slider">
-        <div className="items"
-          onMouseDown={handleStart}
-          onMouseMove={handleMove}
-          onMouseUp={handleEnd}
-          onTouchStart={handleStart}
-          onTouchMove={handleMove}
-          onTouchEnd={handleEnd}
-          onWheel={handleWheel}
-        >
-          {items.map((item, index) => {
-            const isActive = index === active;
-            const backgroundColor = typeColorsLight[item.types[0].type.name];
-            const borderColor = typeColorsHalf[item.types[0].type.name];
-            const japaneseNameEntry = jaPokemonNames.find(pokemon => pokemon.id === item.id);
-            const japaneseName = japaneseNameEntry ? japaneseNameEntry.name : '';
-            const normalizedName = normalizePokemonName(item.name);
-            return (
-              <div
-                key={index}
-                className={`item ${index === active ? 'active' : ''}`}
-                ref={(el) => (itemRefs.current[index] = el)}
-                style={{
-                  backgroundColor,
-                  borderColor,
-                  visibility: item.isImageLoaded ? 'visible' : 'hidden', // Hide the card until the image is loaded
-                }}
-              >
-                <div className="top-info">
-                  <p id="number"><span>#</span>{item.id.toString().padStart(3, '0')}</p>
-                  <p id="hp"><span>HP</span>{item.stats[0].base_stat}</p>
-                </div>
-                <div className="names">
-                  <h3 className="name">{normalizedName}</h3>
-                  {japaneseName && (
-                    <h4 className="jap-name">{japaneseName}</h4>
-                  )}
-                </div>
-                <div className="types">
-                  {item.types.map((type) => (
-                    <span
-                      key={type.type.name}
-                      className="type"
-                      style={{ backgroundColor: typeColorsHalf[type.type.name] }}
-                      onClick={isActive ? () => onFilterType(type.type.name) : null}
-                    >
-                      {type.type.name}
-                    </span>
-                  ))}
-                </div>
-                <div className='pokebox'>
-                  <img className="pokeimg" src={item.spriteUrl} alt={item.name}
-                    style={{
-                      animation: isActive ? 'pokemonAnimation 2.5s infinite linear' : null,
-                      visibility: item.isImageLoaded ? 'visible' : 'hidden', // Hide the image if not loaded
-                    }}
-                  />
-                </div>
-                <div className="pokeinfo fade">
-                  {isActive && showStats && (
-                    <PokemonStats stats={item.stats} types={item.types} pokemonName={item.name} />
-                  )}
-                  {isActive && showDescription && (
-                    <PokemonDescription pokemonId={item.id} types={item.types} />
-                  )}
-                </div>
-                <div className="fade">
-                  {isActive && showEvolutions && (
-                    <EvolutionPath pokemonId={item.id} onPokemonClick={onPokemonClick} />
-                  )}
-                </div>
+    <div className="slider">
+      <div className="items"
+        onMouseDown={handleStart}
+        onMouseMove={handleMove}
+        onMouseUp={handleEnd}
+        onTouchStart={handleStart}
+        onTouchMove={handleMove}
+        onTouchEnd={handleEnd}
+        onWheel={handleWheel}
+      >
+        {items.map((item, index) => {
+          const isActive = index === active;
+          const backgroundColor = typeColorsLight[item.types[0].type.name];
+					const borderColor = typeColorsHalf[item.types[0].type.name];
+					const japaneseNameEntry = jaPokemonNames.find(pokemon => pokemon.id === item.id);
+          const japaneseName = japaneseNameEntry ? japaneseNameEntry.name : '';
+          const normalizedName = normalizePokemonName(item.name);
+          return (
+            <div
+              key={index}
+              className={`item ${index === active ? 'active' : ''}`}
+              ref={(el) => (itemRefs.current[index] = el)}
+              style={{
+                backgroundColor,
+                borderColor,
+                visibility: item.isImageLoaded ? 'visible' : 'hidden', // Hide the card until the image is loaded
+              }}
+            >
+              <div className="top-info">
+                <p id="number"><span>#</span>{item.id.toString().padStart(3, '0')}</p>
+                <p id="hp"><span>HP</span>{item.stats[0].base_stat}</p>
               </div>
-            );
-          })}
-        </div>
-        <div className="buttons">
-          <button id="prev" className="ArrowLeft" onClick={prev} style={{ visibility: active > 0 ? 'visible' : 'hidden' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor" className="size-6">
-              <path fillRule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clipRule="evenodd" />
-            </svg>
-          </button>
-          <button id="next" className="ArrowRight" onClick={next} style={{ visibility: active < items.length - 1 ? 'visible' : 'hidden' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor" className="size-6">
-              <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clipRule="evenodd" />
-            </svg>
-          </button>
-        </div>
+              <div className="names">
+                <h3 className="name">{normalizedName}</h3>
+							  {japaneseName && (
+                  <h4 className="jap-name">{japaneseName}</h4>
+                )}
+              </div>
+              <div className="types">
+                {item.types.map((type) => (
+                  <span
+                    key={type.type.name}
+                    className="type"
+                    style={{ backgroundColor: typeColorsHalf[type.type.name] }}
+                    onClick={isActive ? () => onFilterType(type.type.name) : null}
+                  >
+                    {type.type.name}
+                  </span>
+                ))}
+              </div>
+							<div className='pokebox'>
+                <img className="pokeimg" src={item.spriteUrl} alt={item.name}
+                  style={{
+                    animation: isActive ? 'pokemonAnimation 2.5s infinite linear' : null,
+                    visibility: item.isImageLoaded ? 'visible' : 'hidden', // Hide the image if not loaded
+                  }}
+                />
+            	</div>
+              <div className="pokeinfo fade">
+                {isActive && showStats && (
+                  <PokemonStats stats={item.stats} types={item.types} pokemonName={item.name} />
+                )}
+                {isActive && showDescription && (
+                  <PokemonDescription pokemonId={item.id} types={item.types} />
+                )}
+              </div>
+              <div className="fade">
+                {isActive && showEvolutions && (
+                  <EvolutionPath pokemonId={item.id} onPokemonClick={onPokemonClick} />
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="buttons">
+        <button id="prev" className="ArrowLeft" onClick={prev} style={{ visibility: active > 0 ? 'visible' : 'hidden' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor" className="size-6">
+            <path fillRule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clipRule="evenodd" />
+          </svg>
+        </button>
+        <button id="next" className="ArrowRight" onClick={next} style={{ visibility: active < items.length - 1 ? 'visible' : 'hidden' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor" className="size-6">
+            <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clipRule="evenodd" />
+          </svg>
+        </button>
       </div>
     </div>
   );
