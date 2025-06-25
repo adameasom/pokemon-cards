@@ -38,7 +38,6 @@
 	align-items: center;
 	margin-top: 85px;
 	touch-action: pan-y;
-	white-space: wrap;
 }
 
 .items {
