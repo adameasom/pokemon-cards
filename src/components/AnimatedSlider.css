@@ -38,7 +38,6 @@
 	align-items: center;
 	margin-top: 85px;
 	width: 100vw;
-	overflow: hidden;
 	touch-action: pan-y;
 }
 
