@@ -31,17 +31,14 @@
   }
 }
 
-.animated-slider {
-	width: 100vw;
-	touch-action: pan-y;
-}
-
 .slider {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin-top: 85px;
+	touch-action: pan-y;
+	white-space: wrap;
 }
 
 .items {
