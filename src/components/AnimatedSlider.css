@@ -37,7 +37,6 @@
 	justify-content: center;
 	align-items: center;
 	margin-top: 85px;
-	touch-action: pan-y;
 }
 
 .items {
