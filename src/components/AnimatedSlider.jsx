@@ -99,6 +99,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
 
     // Only handle the swipe if it is more horizontal than vertical
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+      e.preventDefault(); // Prevent default action (like scrolling)
       if (diffX > 0) {
         prev(); // Swipe right
       } else {
