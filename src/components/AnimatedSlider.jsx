@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { isMobile } from 'react-device-detect';
 import './AnimatedSlider.css';
 import PokemonStats from './PokemonStats';
 import EvolutionPath from './EvolutionPath';
@@ -112,8 +111,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   };
 
   const handleWheel = (e) => {
-    if (isMobile) return; // Ignore wheel events on mobile devices
-
     if (wheelTimeoutRef.current !== null) {
       // Debounce: If the wheel event triggers too soon after the previous one, ignore it
       return;
