@@ -187,9 +187,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
         onMouseDown={handleStart}
         onMouseMove={handleMove}
         onMouseUp={handleEnd}
-        onTouchStart={handleStart}
-        onTouchMove={handleMove}
-        onTouchEnd={handleEnd}
         onWheel={handleWheel}
       >
         {items.map((item, index) => {
