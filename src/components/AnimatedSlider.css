@@ -45,7 +45,6 @@
 	justify-content: center;
 	z-index: 5;
 	animation: cardLoading 2.5s ease-in-out;
-	overflow: hidden;
 }
 
 .item {
