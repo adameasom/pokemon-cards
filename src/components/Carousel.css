@@ -5,7 +5,6 @@
 	align-content: center;
 	margin-top: 85px;
 	transition: 0.3s;
-	touch-action: pan-y;
 }
 
 .blurred {
