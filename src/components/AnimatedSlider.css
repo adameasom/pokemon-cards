@@ -31,6 +31,10 @@
   }
 }
 
+.animated-slider {
+	overflow-x: hidden;
+}
+
 .slider {
 	display: flex;
 	flex-direction: column;

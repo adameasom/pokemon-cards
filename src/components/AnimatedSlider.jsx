@@ -181,7 +181,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   }, []);
 
   return (
-    <div>
+    <div className="animated-slider">
       <div
         className="slider"
         onMouseDown={handleStart}
