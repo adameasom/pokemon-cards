@@ -119,7 +119,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
 
     // Handle two-finger trackpad swipe via the wheel event
     if (Math.abs(e.deltaX) > swipeThreshold) {
-      e.preventDefault(); // Prevent default scrolling behavior
       if (e.deltaX > 0) {
         next(); // Swipe left
       } else if (e.deltaX < 0) {
@@ -183,16 +182,17 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   }, []);
 
   return (
-    <div className="slider">
-      <div className="items"
-        onMouseDown={handleStart}
-        onMouseMove={handleMove}
-        onMouseUp={handleEnd}
-        onTouchStart={handleStart}
-        onTouchMove={handleMove}
-        onTouchEnd={handleEnd}
-        onWheel={handleWheel}
-      >
+    <div
+      className="slider"
+      onMouseDown={handleStart}
+      onMouseMove={handleMove}
+      onMouseUp={handleEnd}
+      onTouchStart={handleStart}
+      onTouchMove={handleMove}
+      onTouchEnd={handleEnd}
+      onWheel={handleWheel}
+    >
+      <div className="items">
         {items.map((item, index) => {
           const isActive = index === active;
           const backgroundColor = typeColorsLight[item.types[0].type.name];
