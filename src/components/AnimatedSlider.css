@@ -32,6 +32,7 @@
 }
 
 .animated-slider {
+	width: 100vw;
 	touch-action: pan-y;
 }
 
