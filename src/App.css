@@ -6,7 +6,7 @@
 
 html, body {
   width: 100vw;
-  height: 200vh;
+  height: 100%;
   overflow-x: hidden;
   touch-action: manipulation;
 }
@@ -32,9 +32,6 @@ button {
 }
 
 @media only screen and (min-width: 1025px) {
-  html, body {
-    height: 100%;
-  }
   .app-container {
     height: 100%;
   }
