@@ -6,7 +6,7 @@
 
 html, body {
   width: 100vw;
-  height: 110%;
+  height: fit-content;
   overflow-x: hidden;
   touch-action: manipulation;
 }
