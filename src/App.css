@@ -4,9 +4,9 @@
   padding: 0;
 }
 
-html, body {
+html {
   width: 100vw;
-  height: 250vh;
+  height: 100vh;
   overflow-x: hidden;
   touch-action: manipulation;
 }
@@ -21,7 +21,7 @@ button {
 .app-container {
 	display: flex;
 	flex-direction: column;
-  height: 250vh;
+  min-height: 100vh;
   overflow-x: contain;
   touch-action: pan-y;
 }
@@ -31,11 +31,4 @@ button {
   transition: filter 0.3s ease;
 }
 
-@media only screen and (min-width: 1025px) {
-  html, body {
-    height: 100%;
-  }
-  .app-container {
-    height: 100%;
-  }
-}
+
