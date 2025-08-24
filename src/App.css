@@ -21,7 +21,7 @@ button {
 .app-container {
 	display: flex;
 	flex-direction: column;
-  height: 200vh;
+  height: 250vh;
   overflow-x: hidden;
   touch-action: pan-y;
 }
