@@ -1,4 +1,24 @@
-:root {
+/* Reset box-sizing for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+html {
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -6,4 +26,11 @@
 
 #root {
   height: 100%;
+}
+
+button {
+  color: black;
+  -webkit-appearance: none; /* Remove default mobile browser styling (iOS and Android) */
+  -moz-appearance: none; /* Remove default mobile browser styling for Firefox */
+  appearance: none; /* Ensure the appearance is consistent across all browsers */
 }
