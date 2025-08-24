@@ -21,6 +21,7 @@ button {
 .app-container {
 	display: flex;
 	flex-direction: column;
+  height: 200vh;
 }
 
 .blurred {
@@ -30,6 +31,9 @@ button {
 
 @media only screen and (min-width: 1025px) {
   html, body {
+    height: 100%;
+  }
+  .app-container {
     height: 100%;
   }
 }
