@@ -13,7 +13,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   const [startPosition, setStartPosition] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const swipeThreshold = 6;
-  const wheelTimeoutRef = useRef(null);
 
   const [showStats, setShowStats] = useState(false);
   const [showEvolutions, setShowEvolutions] = useState(false);
@@ -101,14 +100,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     setStartPosition({ x: null, y: null });
   };
 
-  const handleWheel = (e) => {
-    if (wheelTimeoutRef.current !== null) return;
-    if (Math.abs(e.deltaX) > swipeThreshold) {
-      e.deltaX > 0 ? next() : prev();
-    }
-    wheelTimeoutRef.current = setTimeout(() => (wheelTimeoutRef.current = null), 400);
-  };
-
   const loadShow = () => {
     if (!itemRefs.current) return;
     let stt = 0;
@@ -142,12 +133,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     if (active > 0) setActive(active - 1);
   };
 
-  useEffect(() => {
-    return () => {
-      if (wheelTimeoutRef.current) clearTimeout(wheelTimeoutRef.current);
-    };
-  }, []);
-
   return (
     <div className="slider">
       <div
@@ -158,7 +143,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
         onTouchStart={handleStart}
         onTouchMove={handleMove}
         onTouchEnd={handleEnd}
-        onWheel={handleWheel}
       >
         {visibleItems.map((item, index) => {
           const actualIndex = start + index;
