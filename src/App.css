@@ -22,6 +22,8 @@ button {
 	display: flex;
 	flex-direction: column;
   height: 200vh;
+  overflow-x: hidden;
+  touch-action: pan-y;
 }
 
 .blurred {
