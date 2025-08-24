@@ -4,7 +4,7 @@
 	height: fit-content;
   width: 400px;
   margin-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
 	opacity: 0;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 	z-index: 1;
