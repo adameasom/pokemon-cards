@@ -22,7 +22,7 @@ button {
 	display: flex;
 	flex-direction: column;
   height: 250vh;
-  overflow-x: hidden;
+  overflow-x: contain;
   touch-action: pan-y;
 }
 
