@@ -6,9 +6,8 @@
 
 html, body {
   width: 100vw;
-  height: 100%;
+  height: 200vh;
   overflow-x: hidden;
-  overflow-y: auto;
   touch-action: manipulation;
 }
 
@@ -27,4 +26,10 @@ button {
 .blurred {
   filter: blur(5px);
   transition: filter 0.3s ease;
+}
+
+@media only screen and (min-width: 1025px) {
+  html, body {
+    height: 100%;
+  }
 }
