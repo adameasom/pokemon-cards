@@ -6,7 +6,7 @@
 
 html, body {
   width: 100vw;
-  height: fit-content;
+  height: 100%;
   overflow-x: hidden;
   touch-action: manipulation;
 }
@@ -21,15 +21,10 @@ button {
 .app-container {
 	display: flex;
 	flex-direction: column;
+  height: fit-content;
 }
 
 .blurred {
   filter: blur(5px);
   transition: filter 0.3s ease;
-}
-
-@media only screen and (min-width: 1025px) {
-  html, body {
-    height: 100%;
-  }
 }
