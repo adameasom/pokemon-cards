@@ -53,7 +53,7 @@ const App = () => {
   };
 
   const handleFeelingLucky = () => {
-    const randomId = Math.floor(Math.random() * 1000) + 1; // 649 Pokémon
+    const randomId = Math.floor(Math.random() * 1025) + 1; // 1025 Pokémon
     setFilterById(randomId);
     setSearchTerm(''); // Clear search term when filtering by randomid
     setFilterType(''); // Clear type filter when filtering by randomid
