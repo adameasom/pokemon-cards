@@ -4,15 +4,16 @@ import './TypeButtonsBar.css';
 import { typeColorsHalf } from '../utils/typeColors';
 
 const TypeButtonsBar = ({ onFilterType }) => {
-    const [types, setTypes] = useState([]);
-    const [showBar, setShowBar] = useState(false);
+  const [types, setTypes] = useState([]);
+  const [showBar, setShowBar] = useState(false);
 
   useEffect(() => {
     const fetchTypes = async () => {
       try {
         const response = await axios.get('https://pokeapi.co/api/v2/type');
         const fetchedTypes = response.data.results.map(type => type.name);
-        setTypes(fetchedTypes.sort());
+        // Combine 'all' with fetched types
+        setTypes(['all', ...fetchedTypes.sort()]);
       } catch (error) {
         console.error('Error fetching Pokémon types:', error);
       }
@@ -21,30 +22,25 @@ const TypeButtonsBar = ({ onFilterType }) => {
     fetchTypes();
   }, []);
 
+  // Trigger the fade-in animation after types are loaded
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBar(true); // Trigger the animation
-    }, 300); // Delay before showing the bar
-
+    if (types.length === 0) return;
+    const timer = setTimeout(() => setShowBar(true), 300);
     return () => clearTimeout(timer);
-  }, []);
+  }, [types]);
+
+  if (types.length === 0) return null; // Don't render until all types are loaded
 
   return (
     <div className={`type-buttons-bar ${showBar ? 'show' : ''}`}>
-      <button
-        key="all"
-        className="type-button"
-        style={{ backgroundColor: '#aaaaaa' }}
-        onClick={() => onFilterType('')}
-      >
-        All
-      </button>
       {types.map((type) => (
         <button
           key={type}
           className="type-button"
-          style={{ backgroundColor: typeColorsHalf[type] }}
-          onClick={() => onFilterType(type)}
+          style={{
+            backgroundColor: type === 'all' ? '#aaaaaa' : typeColorsHalf[type],
+          }}
+          onClick={() => onFilterType(type === 'all' ? '' : type)}
         >
           {type}
         </button>
