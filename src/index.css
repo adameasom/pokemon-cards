@@ -7,11 +7,10 @@
 html, body {
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
-  overscroll-behavior-x: none;
 }
 
 html {
+  overflow-x: hidden;
   touch-action: manipulation;
 }
 
