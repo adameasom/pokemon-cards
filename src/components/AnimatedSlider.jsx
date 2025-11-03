@@ -194,14 +194,16 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
                   }}
                 />
               </div>
-              <div className="pokeinfo fade">
-                {isActive && showStats && <PokemonStats stats={item.stats} types={item.types} pokemonName={item.name} />}
-                {isActive && showDescription && <PokemonDescription pokemonId={item.id} types={item.types} />}
-              </div>
-              <div className="fade">
-                {isActive && showEvolutions && (
-                  <EvolutionPath pokemonId={item.id} onPokemonClick={onPokemonClick} />
-                )}
+              <div className="info">
+                <div className="pokeinfo fade">
+                  {isActive && showStats && <PokemonStats stats={item.stats} types={item.types} pokemonName={item.name} />}
+                  {isActive && showDescription && <PokemonDescription pokemonId={item.id} types={item.types} />}
+                </div>
+                <div className="fade">
+                  {isActive && showEvolutions && (
+                    <EvolutionPath pokemonId={item.id} onPokemonClick={onPokemonClick} />
+                  )}
+                </div>
               </div>
             </div>
           );

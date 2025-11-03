@@ -148,10 +148,17 @@
   border-radius: 20px;
   color: rgb(255, 255, 255);
   font-size: x-small;
-	text-align: center;
+  text-align: center;
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overscroll-behavior-x: none;
 }
 
 .pokeinfo {
