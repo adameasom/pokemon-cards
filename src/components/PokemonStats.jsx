@@ -33,7 +33,7 @@ const PokemonStats = ({ stats, types, pokemonName }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoaded(true);
-    }, 1000); // Short delay to trigger the animation
+    }, 100); // Short delay to trigger the animation
     return () => clearTimeout(timeout);
   }, []);
 
