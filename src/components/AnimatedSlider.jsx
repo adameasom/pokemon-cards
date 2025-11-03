@@ -21,7 +21,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   const itemRefs = useRef([]);
 
   // 🆕 Limit visible items to just 5 around the current active index
-  const windowSize = 2;
+  const windowSize = 4;
   const start = Math.max(active - windowSize, 0);
   const end = Math.min(active + windowSize + 1, items.length);
   const visibleItems = items.slice(start, end);
@@ -102,7 +102,6 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
 
   const loadShow = () => {
     if (!itemRefs.current) return;
-    let stt = 0;
     visibleItems.forEach((_, index) => {
       const actualIndex = start + index;
       const ref = itemRefs.current[actualIndex];
