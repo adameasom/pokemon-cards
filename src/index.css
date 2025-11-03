@@ -11,6 +11,7 @@ html, body {
 
 html {
   overflow-x: hidden;
+  overscroll-behavior-x: none;
   touch-action: manipulation;
 }
 
