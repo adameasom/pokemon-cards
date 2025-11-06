@@ -61,14 +61,6 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
   
     fetchPokemon();
   }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPokeCount(true); // Trigger the animation
-    }, 300); // Delay before showing the bar
-
-    return () => clearTimeout(timer);
-  }, []);
   
   const handleImageLoad = (index) => {
     setPoke(prevPoke => {
