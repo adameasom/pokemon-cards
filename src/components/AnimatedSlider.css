@@ -103,6 +103,16 @@
 	border-radius: 20px 0;
 }
 
+#generation {
+	width: 60px;
+	height: 18px;
+	border-radius: 20px;
+	text-align: center;
+	font-size: x-small;
+	border-bottom: rgb(192, 192, 192, 0.5) 1px solid;
+	translate: 0 -14px;
+}
+
 #hp {
 	border-radius: 0 20px;
 }

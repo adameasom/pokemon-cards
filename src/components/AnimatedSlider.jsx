@@ -132,6 +132,18 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     if (active > 0) setActive(active - 1);
   };
 
+  const getGeneration = (id) => {
+    if (id <= 151) return 'Gen I';
+    if (id <= 251) return 'Gen II';
+    if (id <= 386) return 'Gen III';
+    if (id <= 493) return 'Gen IV';
+    if (id <= 649) return 'Gen V';
+    if (id <= 721) return 'Gen VI';
+    if (id <= 809) return 'Gen VII';
+    if (id <= 905) return 'Gen VIII';
+    return 'Gen IX';
+  };
+
   return (
     <div className="slider">
       <div
@@ -165,6 +177,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
             >
               <div className="top-info">
                 <p id="number"><span>#</span>{item.id.toString().padStart(3, '0')}</p>
+                <p id="generation">{getGeneration(item.id)}</p>
                 <p id="hp"><span>HP</span>{item.stats[0].base_stat}</p>
               </div>
               <div className="names">
