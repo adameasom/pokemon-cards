@@ -61,7 +61,7 @@ const EvolutionPath = ({ pokemonId, onPokemonClick }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoaded(true);
-    }, 300); // Short delay to trigger the animation
+    }, 100); // Short delay to trigger the animation
     return () => clearTimeout(timeout);
   }, []);
 
