@@ -127,6 +127,64 @@
 	user-select: none;
 }
 
+.height-weight-tabs {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Common styles */
+.height-tab,
+.weight-tab {
+  position: absolute;
+	width: 120px;
+	border-bottom: 2px solid;
+  font-weight: 600;
+  font-size: small;
+  color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease-in;
+	z-index: 100;
+  pointer-events: none;
+}
+
+/* Start positions: hidden behind the card */
+.height-tab {
+	padding-right: 8px;
+	text-align: right;
+  left: -60px;
+  transform: translateY(-93px);
+}
+
+.weight-tab {
+	padding-left: 8px;
+	text-align: left;
+  right: -60px;
+  transform: translateY(-93px);
+}
+
+/* When visible, they pop out */
+.height-tab.visible {
+  left: -133px;
+  opacity: 1;
+  transform: translateY(-93px);
+}
+
+.weight-tab.visible {
+  right: -133px;
+  opacity: 1;
+  transform: translateY(-93px);
+}
+
+/* Add subtle slide-back animation */
+.height-tab:not(.visible),
+.weight-tab:not(.visible) {
+  transition: all 0.6s ease-in, opacity 0.2s ease-in;
+}
+
 .pokebox {
 	display: flex;
 	justify-content: center;

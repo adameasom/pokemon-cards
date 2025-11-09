@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './AnimatedSlider.css';
+import PokemonDescription from './PokemonDescription';
 import PokemonStats from './PokemonStats';
 import EvolutionPath from './EvolutionPath';
-import PokemonDescription from './PokemonDescription';
 import { normalizePokemonName } from '../utils/normalizePokemonName';
 import { typeColorsLight, typeColorsHalf } from '../utils/typeColors';
 import jaPokemonNames from '../utils/jaPokemonNames.json';
@@ -14,9 +14,11 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
   const [isDragging, setIsDragging] = useState(false);
   const swipeThreshold = 6;
 
+  const [showDescription, setShowDescription] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [showEvolutions, setShowEvolutions] = useState(false);
-  const [showDescription, setShowDescription] = useState(false);
+  const [showGeneration, setShowGeneration] = useState(true);
+  const [showHeightWeight, setShowHeightWeight] = useState(false);
 
   const itemRefs = useRef([]);
 
@@ -37,15 +39,21 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     setShowStats(false);
     setShowEvolutions(false);
     setShowDescription(false);
+    setShowGeneration(true);
+    setShowHeightWeight(true);
 
+    const descriptionTimeout = setTimeout(() => setShowDescription(true), 300);
     const statsTimeout = setTimeout(() => setShowStats(true), 300);
     const evolutionsTimeout = setTimeout(() => setShowEvolutions(true), 1000);
-    const descriptionTimeout = setTimeout(() => setShowDescription(true), 300);
+    const hideGenerationTimeout = setTimeout(() => setShowGeneration(false), 2000);
+    const hideHeightWeightTimeout = setTimeout(() => setShowHeightWeight(false), 4000);
 
     return () => {
       clearTimeout(statsTimeout);
       clearTimeout(evolutionsTimeout);
       clearTimeout(descriptionTimeout);
+      clearTimeout(hideGenerationTimeout);
+      clearTimeout(hideHeightWeightTimeout);
     };
   }, [active, items]);
 
@@ -177,9 +185,37 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
             >
               <div className="top-info">
                 <p id="number"><span>#</span>{item.id.toString().padStart(3, '0')}</p>
-                <p id="generation">{getGeneration(item.id)}</p>
+                <p
+                  id="generation"
+                  style={{
+                    opacity: showGeneration ? 1 : 0,
+                    transition: 'opacity 0.6s ease',
+                  }}
+                >
+                  {getGeneration(item.id)}
+                </p>
                 <p id="hp"><span>HP</span>{item.stats[0].base_stat}</p>
               </div>
+              {isActive && (
+                <div className="height-weight-tabs">
+                  <div
+                    className={`height-tab ${showHeightWeight ? 'visible' : ''}`}
+                    style={{
+                      borderColor,
+                    }}
+                  >
+                    <p>Height: {item.height / 10} m</p>
+                  </div>
+                  <div
+                    className={`weight-tab ${showHeightWeight ? 'visible' : ''}`}
+                    style={{
+                      borderColor,
+                    }}
+                  >
+                    <p>Weight: {item.weight / 10} kg</p>
+                  </div>
+                </div>
+              )}
               <div className="names">
                 <h3 className="name">{normalizedName}</h3>
                 {japaneseName && <h4 className="jap-name">{japaneseName}</h4>}
