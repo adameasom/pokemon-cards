@@ -40,11 +40,12 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     setShowEvolutions(false);
     setShowDescription(false);
     setShowGeneration(true);
-    setShowHeightWeight(true);
+    setShowHeightWeight(false);
 
     const descriptionTimeout = setTimeout(() => setShowDescription(true), 300);
     const statsTimeout = setTimeout(() => setShowStats(true), 300);
     const evolutionsTimeout = setTimeout(() => setShowEvolutions(true), 1000);
+    const showHeightWeightTimeout = setTimeout(() => setShowHeightWeight(true), 300);
     const hideGenerationTimeout = setTimeout(() => setShowGeneration(false), 2000);
     const hideHeightWeightTimeout = setTimeout(() => setShowHeightWeight(false), 4000);
 
@@ -52,8 +53,10 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
       clearTimeout(statsTimeout);
       clearTimeout(evolutionsTimeout);
       clearTimeout(descriptionTimeout);
+      clearTimeout(showHeightWeightTimeout);
       clearTimeout(hideGenerationTimeout);
       clearTimeout(hideHeightWeightTimeout);
+      setShowHeightWeight(false); // ensure reset before next render
     };
   }, [active, items]);
 

@@ -147,7 +147,6 @@
   color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease-in;
-	z-index: 100;
   pointer-events: none;
 }
 
@@ -156,27 +155,27 @@
 	padding-right: 8px;
 	text-align: right;
   left: -60px;
-  transform: translateY(-93px);
+  transform: translateY(-144px);
 }
 
 .weight-tab {
 	padding-left: 8px;
 	text-align: left;
   right: -60px;
-  transform: translateY(-93px);
+  transform: translateY(-144px);
 }
 
 /* When visible, they pop out */
 .height-tab.visible {
   left: -133px;
   opacity: 1;
-  transform: translateY(-93px);
+  transform: translateY(-144px);
 }
 
 .weight-tab.visible {
   right: -133px;
   opacity: 1;
-  transform: translateY(-93px);
+  transform: translateY(-144px);
 }
 
 /* Add subtle slide-back animation */
@@ -280,6 +279,32 @@
 	}
 }
 
+@media (max-width: 600px) {
+  .height-weight-tabs {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+	.height-tab {
+		transform: translateY(-93px);
+	}
+	
+	.weight-tab {
+		transform: translateY(-93px);
+	}
+	
+	/* When visible, they pop out */
+	.height-tab.visible {
+		transform: translateY(-93px);
+	}
+	
+	.weight-tab.visible {
+		transform: translateY(-93px);
+	}
+}
+
+
 @media only screen and (min-width: 1025px) {
 	#next:hover {
 		transform: translateX(5px);
@@ -288,3 +313,4 @@
 		transform: translateX(-5px);
 	} 
 }
+
