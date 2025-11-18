@@ -65,15 +65,15 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
   const handleImageLoad = (index) => {
     setPoke(prevPoke => {
       const newPoke = [...prevPoke];
-      newPoke[index].isImageLoaded = true; // Mark the image as loaded
+      newPoke[index].isImageLoaded = true;
+  
+      // Check if all images are loaded using the updated array
+      const allLoaded = newPoke.every(p => p.isImageLoaded);
+  
+      if (allLoaded) setLoading(false);
+  
       return newPoke;
     });
-  
-    // Check if all Pokémon images are loaded
-    const allLoaded = poke.every(p => p.isImageLoaded);
-    if (allLoaded) {
-      setLoading(false); // Set global loading to false only when all images are loaded
-    }
   };
 
   // Use useMemo to memoize the data
