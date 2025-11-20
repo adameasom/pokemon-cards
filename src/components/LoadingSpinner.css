@@ -20,8 +20,6 @@
 }
   
 .spinner {
-	position: absolute;
-	top: 50vh;
 	width: 60px;
 	height: 60px;
 	animation: rock 1s infinite ease-in-out;
