@@ -22,13 +22,20 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
   const [filteredPokemonCount, setFilteredPokemonCount] = useState(0);
   const [activePokemonIndex, setActivePokemonIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [fetchedCount, setFetchedCount] = useState(0);
+  const [loadedImages, setLoadedImages] = useState(0);
 
   useEffect(() => {
     const fetchPokemon = async () => {
       setLoading(true); // Start global loading
       const promises = [];
       for (let i = 1; i <= 1025; i++) {
-        promises.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`));
+        promises.push(
+          axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`).then((res) => {
+            setFetchedCount((prev) => prev + 1);
+            return res;
+          })
+        );
       }
   
       const results = await Promise.all(promises);
@@ -63,6 +70,8 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
   }, []);
   
   const handleImageLoad = (index) => {
+    setLoadedImages(prev => prev + 1);
+
     setPoke(prevPoke => {
       const newPoke = [...prevPoke];
       newPoke[index].isImageLoaded = true;
@@ -75,6 +84,11 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
       return newPoke;
     });
   };
+
+  const total = 1025 * 2; // 1025 fetches + 1025 images
+  const progress = Math.round(
+    Math.min(((fetchedCount + loadedImages) / total) * 100, 100)
+  );
 
   // Use useMemo to memoize the data
   const memoizedPoke = useMemo(() => poke, [poke]);
@@ -134,7 +148,15 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
         onSelectGeneration={handleSelectGeneration}
         disabled={!!searchTerm || !!filterType || !!filterById} />
       {loading || isLoading ? (
-        <LoadingSpinner />
+        <div className="loading-wrapper">
+          <LoadingSpinner />
+
+          <div className="loading-bar-container">
+            <div className="loading-bar" style={{ width: `${progress}%` }}></div>
+          </div>
+
+          <p className="loading-text">{progress}%</p>
+        </div>
       ) : (
         <AnimatedSlider
           items={filteredPokemon}
