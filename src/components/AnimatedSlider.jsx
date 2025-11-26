@@ -49,6 +49,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
     const hideGenerationTimeout = setTimeout(() => setShowGeneration(false), 2000);
     const hideHeightWeightTimeout = setTimeout(() => setShowHeightWeight(false), 4000);
 
+
     return () => {
       clearTimeout(statsTimeout);
       clearTimeout(evolutionsTimeout);
@@ -174,6 +175,7 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
           const japaneseNameEntry = jaPokemonNames.find(p => p.id === item.id);
           const japaneseName = japaneseNameEntry ? japaneseNameEntry.name : '';
           const normalizedName = normalizePokemonName(item.name);
+
 
           return (
             <div

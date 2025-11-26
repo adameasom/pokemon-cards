@@ -232,18 +232,6 @@
 	margin-top: 110px;
 }
 
-.fade {
-	transition: opacity 1s ease-in-out;
-}
-
-.fade-in {
-  opacity: 1;
-}
-
-.fade-out {
-  opacity: 0;
-}
-
 #prev, #next {
 	display: flex;
 	justify-content: center;
