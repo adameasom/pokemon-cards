@@ -146,18 +146,6 @@ npm start
 
 Open the app at:
 
-`Install dependencies:
-
-npm install
-
-
-Run the development server:
-
-npm start
-
-
-Open the app at:
-
 `http://localhost:3000`
 
 ---
