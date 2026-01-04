@@ -146,7 +146,7 @@ npm start
 
 Open the app at:
 
-`http://localhost:3000`
+`http://localhost:5173`
 
 ---
 
