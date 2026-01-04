@@ -14,6 +14,10 @@ All Pokémon data is sourced from the public **[PokéAPI](https://pokeapi.co/)**
 
 ---
 
+![Carousel with active card Pikachu](screenshots/pokemon_card_carousel_mainpage.png)
+
+---
+
 ## Why I Built This
 I built this project out of a personal interest in Pokémon and a desire to experiment with fetching and handling large amounts of data from a free public API.
 
