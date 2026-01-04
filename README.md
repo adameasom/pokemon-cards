@@ -6,7 +6,7 @@ An interactive Pokémon card carousel built with React, designed as both a techn
 ---
 
 ## Overview
-The Pokémon Card Carousel allows users to browse Pokémon through a horizontally animated slider. Each card reacts to user interaction, revealing additional details and transitions as it becomes active.
+The [Pokémon Card Carousel](https://pokemoncardcarousel.netlify.app) allows users to browse Pokémon through a horizontally animated slider. Each card reacts to user interaction, revealing additional details and transitions as it becomes active.
 
 The experience is designed to feel dynamic and responsive while remaining readable and performant, even with a large dataset. Rather than using a traditional list or grid layout, Pokémon are presented as collectible-style cards with motion and depth.
 
