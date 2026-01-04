@@ -165,6 +165,7 @@ While the app is considered feature-complete for now, possible future enhancemen
 
 - Offline support or cached data
 - Expanded Pokémon metadata views
+- Updated Pokémon images for search and evolutions
 - Light / dark theme toggle
 - Improved accessibility (ARIA roles and reduced motion support)
 
