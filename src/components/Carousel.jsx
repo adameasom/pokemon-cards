@@ -7,13 +7,11 @@ import GenerationBar from './GenerationBar';
 import { normalizePokemonName } from '../utils/normalizePokemonName';
 import './Carousel.css';
 
-const getPokemonImageUrl = (id) => {
-  if (id <= 649) {
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`;
-  } else {
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
-  }
-};
+const getPokemonImageUrls = (id) => ({
+  dreamWorld: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`,
+  official: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+});
+
 
 export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onPokemonClick, isLoading, isDropdownActive, onPokemonData }) => {
   const [poke, setPoke] = useState([]);
@@ -46,7 +44,8 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
 
         return {
           ...result.data,
-          spriteUrl: getPokemonImageUrl(result.data.id),
+          spriteUrls: getPokemonImageUrls(result.data.id),
+          spriteUrl: null, // Will be set later based on availability
           normalizedName: normalizePokemonName(result.data.name), // Normalize the English name
           japaneseName, // Use the Japanese name from the JSON
           isImageLoaded: false, // Track whether the image has loaded
@@ -60,21 +59,34 @@ export const Carousel = ({ searchTerm, filterType, filterById, onFilterType, onP
       // Preload images
       pokemonData.forEach((poke, index) => {
         const img = new Image();
-        img.src = poke.spriteUrl;
-        img.onload = () => handleImageLoad(index); // Handle image load event
-        img.onerror = () => handleImageLoad(index); // Handle image error as well
+        img.src = poke.spriteUrls.dreamWorld;
+
+        img.onload = () => handleImageLoad(index, poke.spriteUrls.dreamWorld); // Handle image load event
+
+        img.onerror = () => {
+          const fallbackImg = new Image();
+          fallbackImg.src = poke.spriteUrls.official;
+
+          fallbackImg.onload = () => handleImageLoad(index, poke.spriteUrls.official); // Handle image error with fallback image
+
+          fallbackImg.onerror = () => handleImageLoad(index, null); // If both images fail, mark as loaded with null
+        }
       });
     };
   
     fetchPokemon();
   }, []);
   
-  const handleImageLoad = (index) => {
+  const handleImageLoad = (index, url) => {
     setLoadedImages(prev => prev + 1);
 
     setPoke(prevPoke => {
       const newPoke = [...prevPoke];
-      newPoke[index].isImageLoaded = true;
+      newPoke[index] = {
+        ...newPoke[index],
+        spriteUrl: url,
+        isImageLoaded: true,
+      }
   
       // Check if all images are loaded using the updated array
       const allLoaded = newPoke.every(p => p.isImageLoaded);
