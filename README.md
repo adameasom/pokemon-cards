@@ -96,8 +96,8 @@ All Pokémon data is fetched from the free **[PokéAPI](https://pokeapi.co/)**, 
 ### Images
 Pokémon images are sourced from official Pokémon sprite repositories:
 
-- **[Dream World SVG sprites](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/other/dream-world)** (Gen 1–5)  
-- **[Official artwork PNGs](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/other/official-artwork)** (Gen 6+)  
+- **[Dream World SVG sprites](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/other/dream-world)**
+- **[Official artwork PNGs](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/other/official-artwork)** (Fallback Option)  
 
 Images are preloaded to ensure smooth transitions within the carousel.
 
