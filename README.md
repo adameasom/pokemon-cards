@@ -10,7 +10,7 @@ The Pokémon Card Carousel allows users to browse Pokémon through a horizontall
 
 The experience is designed to feel dynamic and responsive while remaining readable and performant, even with a large dataset. Rather than using a traditional list or grid layout, Pokémon are presented as collectible-style cards with motion and depth.
 
-All Pokémon data is sourced from the public **PokéAPI** and enhanced with custom logic for presentation and interaction.
+All Pokémon data is sourced from the public **[PokéAPI](https://pokeapi.co/)** and enhanced with custom logic for presentation and interaction.
 
 ---
 
@@ -86,7 +86,7 @@ This project also allowed me to deepen my understanding of:
 ## Data Sources
 
 ### Pokémon Data
-All Pokémon data is fetched from the free **PokéAPI**, including:
+All Pokémon data is fetched from the free **[PokéAPI](https://pokeapi.co/)**, including:
 - Stats  
 - Types  
 - Moves  
@@ -96,8 +96,8 @@ All Pokémon data is fetched from the free **PokéAPI**, including:
 ### Images
 Pokémon images are sourced from official Pokémon sprite repositories:
 
-- **Dream World SVG sprites** (Generations 1–5)  
-- **Official artwork PNGs** (Generation 6+)  
+- **[Dream World SVG sprites](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/other/dream-world)** (Gen 1–5)  
+- **[Official artwork PNGs](https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon/other/official-artwork)** (Gen 6+)  
 
 Images are preloaded to ensure smooth transitions within the carousel.
 
@@ -172,5 +172,5 @@ While the app is considered feature-complete for now, possible future enhancemen
 
 ## Acknowledgements
 
-- Pokémon data provided by the PokéAPI
+- Pokémon data provided by the [PokéAPI](https://pokeapi.co/)
 - Pokémon and related assets are © Nintendo, Game Freak, and The Pokémon Company
