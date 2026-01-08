@@ -133,6 +133,11 @@ Images are preloaded to ensure smooth transitions within the carousel.
   <img src="screenshots/pokemon_card_carousel_mobile.png" alt="Mobile view" width="20%" />
 </div>
 
+### Loading Screen
+<div align="center">
+  <img src="screenshots/pokemon_card_carousel_loading.png" alt="Loading progress bar" width="60%" />
+</div>
+
 ### Search Feature
 <div align="center">
   <img src="screenshots/pokemon_card_carousel_search.png" alt="Search and filtering" width="60%" />
