@@ -134,10 +134,14 @@ Images are preloaded to ensure smooth transitions within the carousel.
 </div>
 
 ### Search Feature
-![Search and filtering feature](screenshots/pokemon_card_carousel_search.png)
+<div align="center">
+  <img src="screenshots/pokemon_card_carousel_search.png" alt="Search and filtering" width="60%" />
+</div>
 
-### Feeling Lucky
-![One active card after clicking Feeling Lucky](screenshots/pokemon_card_carousel_feelinglucky.png)
+### I'm Feeling Lucky
+<div align="center">
+  <img src="screenshots/pokemon_card_carousel_feelinglucky.png" alt="Feeling lucky result" width="60%" />
+</div>
 
 ---
 
