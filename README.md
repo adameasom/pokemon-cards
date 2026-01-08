@@ -129,9 +129,9 @@ Images are preloaded to ensure smooth transitions within the carousel.
 ## Screenshots
 
 <div align="center">
-  <img src="screenshots/pokemon_card_carousel_search.png" alt="Search and filtering" width="40%" />
-  <img src="screenshots/pokemon_card_carousel_mobile.png" alt="Mobile view" width="20%" />
-  <img src="screenshots/pokemon_card_carousel_feelinglucky.png" alt="Feeling lucky result" width="40%" />
+  <img src="screenshots/pokemon_card_carousel_search.png" alt="Search and filtering" width="45%" />
+  <img src="screenshots/pokemon_card_carousel_mobile.png" alt="Mobile view" width="10%" />
+  <img src="screenshots/pokemon_card_carousel_feelinglucky.png" alt="Feeling lucky result" width="45%" />
 </div>
 
 ---
