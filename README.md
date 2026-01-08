@@ -129,7 +129,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 ## Screenshots
 
 ### Mobile View
-<div align="center">
+<div align="center" border="black">
   <img src="screenshots/pokemon_card_carousel_mobile.png" alt="Mobile view" width="20%" />
 </div>
 
