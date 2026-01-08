@@ -128,11 +128,15 @@ Images are preloaded to ensure smooth transitions within the carousel.
 
 ## Screenshots
 
+### Mobile View
 <div align="center">
   <img src="screenshots/pokemon_card_carousel_mobile.png" alt="Mobile view" width="30%" />
 </div>
 
+### Search Feature
 ![Search and filtering feature](screenshots/pokemon_card_carousel_search.png)
+
+### Feeling Lucky
 ![One active card after clicking Feeling Lucky](screenshots/pokemon_card_carousel_feelinglucky.png)
 
 ---
