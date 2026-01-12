@@ -125,6 +125,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 - Pokémon metadata helpers  
 
 ---
+---
 
 ## Screenshots
 
@@ -162,6 +163,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 	/>
 </div>
 
+---
 ---
 
 ## Setup and Installation
