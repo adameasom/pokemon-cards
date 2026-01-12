@@ -131,28 +131,34 @@ Images are preloaded to ensure smooth transitions within the carousel.
 ### Mobile View
 <div align="center" >
   <img src="screenshots/pokemon_card_carousel_mobile.png"
-    alt="Mobile view" width="20%" style="border: 1px solid #ccc; border-radius: 6px;"
+    alt="Mobile view" width="20%"
   />
 </div>
+
+---
 
 ### Loading Screen
 <div align="center">
   <img src="screenshots/pokemon_card_carousel_loading.png"
-		alt="Loading progress bar" width="60%" style="border: 1px solid #ccc; border-radius: 6px;"
+		alt="Loading progress bar" width="60%"
 	/>
 </div>
+
+---
 
 ### Search Feature
 <div align="center">
   <img src="screenshots/pokemon_card_carousel_search.png"
-		alt="Search and filtering" width="60%" style="border: 1px solid #ccc; border-radius: 6px;"
+		alt="Search and filtering" width="60%"
 	/>
 </div>
+
+---
 
 ### I'm Feeling Lucky
 <div align="center">
   <img src="screenshots/pokemon_card_carousel_feelinglucky.png"
-		alt="Feeling lucky result" width="60%" style="border: 1px solid #ccc; border-radius: 6px;"
+		alt="Feeling lucky result" width="60%"
 	/>
 </div>
 
