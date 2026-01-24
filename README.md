@@ -11,6 +11,8 @@ An interactive Pokémon card carousel built with React, designed as both a techn
 
 [View the app](https://pokemoncardcarousel.netlify.app)
 
+Optimized for desktop and mobile browsers.
+
 ---
 
 ## Overview
@@ -131,7 +133,6 @@ Images are preloaded to ensure smooth transitions within the carousel.
 - Pokémon metadata helpers  
 
 ---
----
 
 ## Screenshots
 
@@ -153,7 +154,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 
 ---
 
-### Search Feature
+### Filtering and Search
 <div align="center">
   <img src="screenshots/pokemon_card_carousel_search.png"
 		alt="Search and filtering" width="60%"
@@ -162,14 +163,13 @@ Images are preloaded to ensure smooth transitions within the carousel.
 
 ---
 
-### I'm Feeling Lucky
+### Feeling Lucky
 <div align="center">
   <img src="screenshots/pokemon_card_carousel_feelinglucky.png"
 		alt="Feeling lucky result" width="60%"
 	/>
 </div>
 
----
 ---
 
 ## Setup and Installation
