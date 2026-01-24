@@ -7,6 +7,12 @@ An interactive Pokémon card carousel built with React, designed as both a techn
 
 ---
 
+## Live Demo
+
+[View the app](https://pokemoncardcarousel.netlify.app)
+
+---
+
 ## Overview
 The [Pokémon Card Carousel](https://pokemoncardcarousel.netlify.app) allows users to browse Pokémon through a horizontally animated slider. Each card reacts to user interaction, revealing additional details and transitions as it becomes active.
 
@@ -198,6 +204,15 @@ Open the app at:
 - Use animation to support understanding, not distract from it
 - Maintain smooth performance despite a large dataset
 - Create an interface that feels deliberate, tactile, and polished
+
+---
+
+## Development Notes
+
+- PokéAPI does not provide a bulk Pokémon endpoint, so data is fetched per Pokémon ID
+- Carousel rendering is windowed to avoid rendering the full dataset at once
+- Image loading uses a fallback strategy (Dream World → Official Artwork)
+- Animations are limited to the active card to reduce unnecessary re-renders
 
 ---
 
