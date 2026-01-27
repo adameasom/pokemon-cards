@@ -231,4 +231,13 @@ While the app is considered feature-complete for now, possible future enhancemen
 ## Acknowledgements
 
 - Pokémon data provided by the [PokéAPI](https://pokeapi.co/)
-- Pokémon and related assets are © Nintendo, Game Freak, and The Pokémon Company
+- Thanks to the PokéAPI maintainers for providing a high-quality public API
+- Inspiration from physical Pokémon trading cards and collectible UI design
+
+---
+
+## License
+This project is intended for educational and portfolio purposes only.
+
+Pokémon and related assets are © Nintendo, Game Freak, and The Pokémon Company.
+All trademarks and copyrights belong to their respective owners.
