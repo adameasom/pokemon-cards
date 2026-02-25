@@ -190,15 +190,17 @@ const AnimatedSlider = ({ items, onFilterType, onActiveChange, onPokemonClick, a
             >
               <div className="top-info">
                 <p id="number"><span>#</span>{item.id.toString().padStart(3, '0')}</p>
-                <p
-                  id="generation"
-                  style={{
-                    opacity: showGeneration ? 1 : 0,
-                    transition: 'opacity 0.6s ease',
-                  }}
-                >
-                  {getGeneration(item.id)}
-                </p>
+                {isActive && (  
+                  <p
+                    id="generation"
+                    style={{
+                      opacity: showGeneration ? 1 : 0,
+                      transition: 'opacity 0.6s ease',
+                    }}
+                  >
+                    {getGeneration(item.id)}
+                  </p>
+                )}
                 <p id="hp"><span>HP</span>{item.stats[0].base_stat}</p>
               </div>
               {isActive && (
