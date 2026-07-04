@@ -3,7 +3,7 @@
 ## TL;DR
 An interactive Pokémon card carousel built with React, designed as both a technical showcase and a UI/UX experiment, emphasizing animation, performance, and user experience.
 
-![Carousel with active card Pikachu](screenshots/pokemon_card_carousel_mainpage.png)
+![Carousel with active card Pikachu](screenshots/pokemon-card-carousel-mainpage.png)
 
 ---
 
@@ -138,7 +138,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 
 ### Mobile View
 <div align="center" >
-  <img src="screenshots/pokemon_card_carousel_mobile.png"
+  <img src="screenshots/pokemon-card-carousel-mobile.png"
     alt="Mobile view" width="20%"
   />
 </div>
@@ -147,7 +147,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 
 ### Loading Screen
 <div align="center">
-  <img src="screenshots/pokemon_card_carousel_loading.png"
+  <img src="screenshots/pokemon-card-carousel-loading.png"
 		alt="Loading progress bar" width="60%"
 	/>
 </div>
@@ -156,7 +156,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 
 ### Filtering and Search
 <div align="center">
-  <img src="screenshots/pokemon_card_carousel_search.png"
+  <img src="screenshots/pokemon-card-carousel-search.png"
 		alt="Search and filtering" width="60%"
 	/>
 </div>
@@ -165,7 +165,7 @@ Images are preloaded to ensure smooth transitions within the carousel.
 
 ### Feeling Lucky
 <div align="center">
-  <img src="screenshots/pokemon_card_carousel_feelinglucky.png"
+  <img src="screenshots/pokemon-card-carousel-feelinglucky.png"
 		alt="Feeling lucky result" width="60%"
 	/>
 </div>
