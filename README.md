@@ -3,7 +3,9 @@
 ## TL;DR
 An interactive Pokémon card carousel built with React, designed as both a technical showcase and a UI/UX experiment, emphasizing animation, performance, and user experience.
 
-![Carousel with active card Pikachu](screenshots/pokemon-card-carousel-mainpage.png)
+<p align="center">
+  <img src="./screenshots/pokemon-card-carousel-desktop-demo.gif" alt="Pokemon Card Carousel Demo" width="66%">
+</p>
 
 ---
 
