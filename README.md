@@ -11,7 +11,7 @@
   <img src="./screenshots/pokemon-card-carousel-desktop-demo.gif" alt="Pokémon Card Carousel Demo" width="66%">
 </p>
 
-A responsive Pokémon card carousel built with **React** that transforms live **PokéAPI** data into an interactive, collectible-inspired browsing experience through smooth animations, responsive design, and performance-focused rendering.
+A responsive Pokémon card carousel built with **React** that transforms live **[PokéAPI](https://pokeapi.co/)** data into an interactive, collectible-inspired browsing experience through smooth animations, responsive design, and performance-focused rendering.
 
 ---
 
@@ -47,7 +47,7 @@ Optimised for desktop and mobile browsers.
 
 ## 📌 Overview
 
-Pokémon Card Carousel is an interactive React application that allows users to browse Pokémon through a horizontally animated card carousel powered by live data from the **PokéAPI**.
+Pokémon Card Carousel is an interactive React application that allows users to browse Pokémon through a horizontally animated card carousel powered by live data from the **[PokéAPI](https://pokeapi.co/)**.
 
 Rather than presenting Pokémon in a conventional list or grid, the application recreates the experience of browsing a physical card collection. Animated transitions, depth effects, and contextual information work together to create an engaging interface while maintaining smooth performance across desktop and mobile devices.
 
