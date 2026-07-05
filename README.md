@@ -352,8 +352,6 @@ Although the application is considered feature-complete for its current scope, t
 
 ---
 
----
-
 ## 🙏 Acknowledgements
 
 This project would not have been possible without the excellent free resources provided by the community.
